@@ -13,21 +13,21 @@ const NewsCarousel = () => {
       id: 1,
       title: "Nuevo Programa de Capacitación",
       date: "2024-03-15",
-      image: "/Noticias/capacitacion.jpg",
+      image: new URL('@images/Noticias/capacitacion.jpg', import.meta.url).href,
       description: "Lanzamos nuestro nuevo programa de capacitación profesional para jóvenes emprendedores."
     },
     {
       id: 2,
       title: "Alianza Estratégica",
       date: "2024-03-10",
-      image: "/Noticias/capacitacion.jpg",
+      image: new URL('@images/Noticias/capacitacion.jpg', import.meta.url).href,
       description: "Firmamos una importante alianza con empresas locales para ampliar oportunidades laborales."
     },
     {
       id: 3,
       title: "Impacto Comunitario",
       date: "2024-03-05",
-      image: "/Noticias/capacitacion.jpg",
+      image: new URL('@images/Noticias/capacitacion.jpg', import.meta.url).href,
       description: "Celebramos el éxito de nuestro último proyecto comunitario con más de 100 beneficiarios."
     }
   ];

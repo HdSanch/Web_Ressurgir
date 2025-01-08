@@ -23,7 +23,7 @@ export default function Navbar() {
             <span className="sr-only">FUNDACIÓN RESSURGIR</span>
             <img
               alt="Fundación Ressurgir Logo"
-              src="./logo.jpg"
+              src={new URL('@icons/logo.jpg', import.meta.url).href} 
               className="h-12 w-auto"
             />
           </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
               <span className="sr-only">FUNDACIÓN RESSURGIR</span>
               <img
                 alt="Fundación Ressurgir Logo"
-                src="./logo.jpg"
+                src={new URL('@icons/logo.jpg', import.meta.url).href} 
                 className="h-12 w-auto"
               />
             </a>

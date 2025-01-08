@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Progress } from '../components/ui/progress';
+import { Card, CardHeader, CardContent } from '@components/ui/card';
+import { Button } from '@components/ui/button';
+import { Progress } from '@components/ui/progress';
+import '@styles/AlcoholAddictionTest.css'; 
 
 const AlcoholAddictionTest = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -65,15 +66,15 @@ const AlcoholAddictionTest = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4 mt-16">
-      <Card>
-        <CardHeader className="text-2xl font-sans font-bold text-center text-primary">
+    <div className="test-container">
+      <Card className="card">
+        <CardHeader className="card-header">
           Test de Adicción al Alcohol
         </CardHeader>
         <CardContent>
           {!showResults ? (
             <div className="space-y-6">
-              <Progress value={progress} className="w-full" />
+              <Progress value={progress} className="progress-bar" />
               <div className="text-lg font-sans font-medium mt-4">
                 {questions[currentQuestion].text}
               </div>
@@ -82,7 +83,7 @@ const AlcoholAddictionTest = () => {
                   <Button
                     key={index}
                     variant="outline"
-                    className="w-full text-left justify-start h-auto py-3 hover:bg-primary hover:text-white transition-colors"
+                    className="option-button"
                     onClick={() => handleAnswer(option.score)}
                   >
                     {option.text}
@@ -95,11 +96,11 @@ const AlcoholAddictionTest = () => {
               <div className="text-xl font-sans font-medium text-center text-primary">
                 Resultados del Test
               </div>
-              <div className="p-4 bg-gray-100 rounded-lg">
-                <p className="text-lg font-sans">{calculateResults()}</p>
+              <div className="results-container">
+                <p className="results-text">{calculateResults()}</p>
               </div>
               <Button 
-                className="w-full bg-secondary hover:bg-secondary/80"
+                className="restart-button"
                 onClick={restartTest}
               >
                 Realizar el test nuevamente

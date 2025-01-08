@@ -1,0 +1,107 @@
+/* Testimonios.css */
+.testimonios-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .personas-ayudadas {
+    background-image: url('@images/images_empre/ayuda-mutua.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .personas-ayudadas-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3rem;
+    text-align: center;
+  }
+  
+  .personas-ayudadas h2 {
+    font-size: 3rem;
+    color: white;
+  }
+  
+  .personas-ayudadas p {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 1rem;
+  }
+  
+  .videos-section {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .video-container {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s;
+  }
+  
+  .video-container:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .video-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .video-grid .video {
+    width: 100%;
+  }
+  
+  .video-grid .video-summary {
+    color: #4a5568;
+  }
+  
+  .motivational-quote {
+    background: linear-gradient(to right, #4299e1, #38b2ac);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .social-media-section {
+    background-image: url('@images/images_empre/gente.jpg');
+    background-size: 50%;
+    background-position: center;
+    padding: 4rem;
+    text-align: center;
+  }
+  
+  .social-media-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .social-media-content h2 {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .social-media-content p {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-media-links a {
+    font-size: 1.25rem;
+    color: white;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-media-links a:hover {
+    color: #fbbf24;
+  }
+  

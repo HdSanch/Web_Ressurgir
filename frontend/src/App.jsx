@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Emprendimientos from './pages/Emprendimientos';
-import Testimonios from './pages/Testimonios';
-import Contactanos from './pages/Contactanos';
-import Navbar from './components/Navbar'; // Asegúrate de que la ruta sea correcta
-import Footer from './components/Footer'; // Importa el Footer
-import PsychologicalTest from './pages/PsychologicalTest';
+import Home from './pages/Home/Home.jsx';
+import Emprendimientos from './pages/Emprendimientos/Emprendimientos.jsx';
+import Testimonios from './pages/Testimonios/Testimonios.jsx';
+import Contactanos from './pages/Contactanos/Contactanos.jsx';
+import Navbar from './components/Navbar'; 
+import Footer from './components/Footer'; 
+import PsychologicalTest from './pages/Test/PsychologicalTest.jsx';
 import Chatbot from './components/Chatbot';
 import './index.css';
 
