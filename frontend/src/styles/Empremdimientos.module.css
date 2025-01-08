@@ -1,8 +1,0 @@
-/* styles.css */
-.btn-category-active {
-  @apply bg-blue-600 text-white shadow-lg transform scale-105;
-}
-
-.btn-category-inactive {
-  @apply bg-white text-gray-600 hover:bg-gray-50 shadow;
-}
