@@ -14,10 +14,8 @@ function App() {
   return (
     <Router>
       <div>
-        {/* Coloca el Navbar aquí para que se vea en todas las páginas */}
         <Navbar />
         <Chatbot />
-        {/* Las rutas de tu aplicación */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/psychologicaltest" element={<PsychologicalTest />} />
