@@ -16,14 +16,19 @@ function App() {
       <div>
         <Navbar />
         <Chatbot />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/psychologicaltest" element={<PsychologicalTest />} />
-          <Route path="/emprendimientos" element={<Emprendimientos />} />
-          <Route path="/testimonios" element={<Testimonios />} />
-          <Route path="/contactanos" element={<Contactanos />} />
-          {/* Otras rutas */}
-        </Routes>
+        
+        {/* Agregamos margen superior para evitar que el navbar cubra el contenido */}
+        <div className="mt-16 lg:mt-20"> 
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/psychologicaltest" element={<PsychologicalTest />} />
+            <Route path="/emprendimientos" element={<Emprendimientos />} />
+            <Route path="/testimonios" element={<Testimonios />} />
+            <Route path="/contactanos" element={<Contactanos />} />
+            {/* Otras rutas */}
+          </Routes>
+        </div>
+
         <Footer />
       </div>
     </Router>

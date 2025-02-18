@@ -7,80 +7,80 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
   { name: 'Quienes somos', href: '#' },
   { name: 'Donaciones', href: '#' },
-  { name: 'Emprendimientos de los pacientes', href: '/emprendimientos' },
+  { name: 'Emprendimientos', href: '/emprendimientos' },
   { name: 'Voluntariado', href: '#' },
   { name: 'Test de adicciones', href: '/psychologicaltest' },
+  { name: 'Servicios', href: '/psychologicaltest' },
+  { name: 'Contactanos', href: '/contactanos' },
 ]
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">FUNDACIÓN RESSURGIR</span>
-            <img
-              alt="Fundación Ressurgir Logo"
-              src={new URL('@icons/logo.jpg', import.meta.url).href} 
-              className="h-12 w-auto"
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Abrir menú</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md shadow-md">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-10">
+        {/* Logo */}
+        <a href="/" className="flex items-center space-x-3">
+          <img
+            src={new URL('@icons/logo.jpg', import.meta.url).href}
+            alt="Fundación Ressurgir"
+            className="h-10 w-auto"
+          />
+          <span className="text-lg font-semibold text-gray-900 tracking-wide">FUNDACIÓN RESSURGIR</span>
+        </a>
+
+        {/* Menú en escritorio */}
+        <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition duration-300"
+            >
               {item.name}
             </a>
           ))}
         </div>
+
+        {/* Botón para menú móvil */}
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-md transition"
+          aria-label="Abrir menú"
+        >
+          <Bars3Icon className="h-6 w-6" />
+        </button>
       </nav>
+
+      {/* Menú móvil */}
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" />
+        <DialogPanel className="fixed inset-y-0 right-0 w-4/5 max-w-xs bg-white/80 backdrop-blur-md p-6 shadow-lg">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">FUNDACIÓN RESSURGIR</span>
-              <img
-                alt="Fundación Ressurgir Logo"
-                src={new URL('@icons/logo.jpg', import.meta.url).href} 
-                className="h-12 w-auto"
-              />
+            <a href="/" className="flex items-center space-x-2">
+              <img src="/icons/logo.jpg" alt="Fundación Ressurgir" className="h-10 w-auto" />
+              <span className="text-lg font-semibold text-gray-900">Ressurgir</span>
             </a>
             <button
-              type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="p-2 text-gray-700 hover:bg-gray-100 rounded-md"
+              aria-label="Cerrar menú"
             >
-              <span className="sr-only">Cerrar menú</span>
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+              <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+
+          <div className="mt-6">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md transition"
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
         </DialogPanel>
       </Dialog>
