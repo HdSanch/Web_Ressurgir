@@ -9,8 +9,8 @@ const navigation = [
   { name: 'Donaciones', href: '#' },
   { name: 'Emprendimientos', href: '/emprendimientos' },
   { name: 'Voluntariado', href: '#' },
-  { name: 'Test de adicciones', href: '/psychologicaltest' },
-  { name: 'Servicios', href: '/psychologicaltest' },
+  { name: 'Tests', href: '/tests' },
+  { name: 'Servicios', href: '/servicios' },
   { name: 'Contactanos', href: '/contactanos' },
 ]
 

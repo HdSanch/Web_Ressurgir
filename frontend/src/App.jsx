@@ -6,7 +6,7 @@ import Testimonios from './pages/Testimonios/Testimonios.jsx';
 import Contactanos from './pages/Contactanos/Contactanos.jsx';
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer'; 
-import PsychologicalTest from './pages/Test/PsychologicalTest.jsx';
+import Tests from './pages/Test/SeleccionTest.jsx';
 import Chatbot from './components/Chatbot';
 import './index.css';
 
@@ -17,11 +17,10 @@ function App() {
         <Navbar />
         <Chatbot />
         
-        {/* Agregamos margen superior para evitar que el navbar cubra el contenido */}
         <div className="mt-16 lg:mt-20"> 
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/psychologicaltest" element={<PsychologicalTest />} />
+            <Route path="/tests" element={<Tests />} />
             <Route path="/emprendimientos" element={<Emprendimientos />} />
             <Route path="/testimonios" element={<Testimonios />} />
             <Route path="/contactanos" element={<Contactanos />} />
