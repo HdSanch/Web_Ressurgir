@@ -1,72 +1,117 @@
-/* Contenedor principal */
-.test-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    margin-top: 4rem;
-  }
-  
-  /* Card */
-  .card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Header */
-  .card-header {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #3490dc; /* color primario */
-  }
-  
-  /* Progress bar */
-  .progress-bar {
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  /* Opciones de respuestas */
-  .option-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: transparent;
-    border: 2px solid #3490dc;
-    text-align: left;
-    transition: background-color 0.3s;
-  }
-  
-  .option-button:hover {
-    background-color: #3490dc;
-    color: white;
-  }
-  
-  /* Resultados */
-  .results-container {
-    padding: 1rem;
-    background-color: #f7fafc;
-    border-radius: 8px;
-  }
-  
-  .results-text {
-    font-size: 1.125rem;
-    color: #2d3748;
-  }
-  
-  .restart-button {
-    background-color: #6b7280;
-    color: white;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .restart-button:hover {
-    background-color: #4b5563;
-  }
-  
+/* 🔹 Contenedor principal */
+.test-selection-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* 🔹 Sección de introducción */
+.intro-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Imagen principal */
+.intro-image {
+  width: 100%;
+  max-width: 850px;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Textos de introducción */
+.intro-text, .confidence-text {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 15px;
+  line-height: 1.6;
+}
+
+.confidence-text {
+  font-style: italic;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* 🔹 Título de la sección de tests */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+/* 🔹 Grid de tests */
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* 🔹 Tarjeta del test */
+.test-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+}
+
+.test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Imagen dentro de la tarjeta */
+.test-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* 🔹 Encabezado de la tarjeta */
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 12px;
+}
+
+/* 🔹 Descripción del test */
+.test-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Botón */
+.more-info-button {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.more-info-button:hover {
+  background: #2980b9;
+}
