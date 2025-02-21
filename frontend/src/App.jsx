@@ -7,24 +7,30 @@ import Contactanos from './pages/Contactanos/Contactanos.jsx';
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer'; 
 import Tests from './pages/Test/SeleccionTest.jsx';
+import TestPage from './pages/Test/TestPages.jsx';
 import Chatbot from './components/Chatbot';
+import NotFound from './NotFound.jsx';
 import './index.css';
 
 function App() {
   return (
     <Router>
-      <div>
+      {/* Usamos flexbox en el contenedor principal */}
+      <div className="flex flex-col min-h-screen">
         <Navbar />
         <Chatbot />
-        
-        <div className="mt-16 lg:mt-20"> 
+
+        {/* Contenedor de Routes que ocupa el espacio disponible */}
+        <div className="flex-grow mt-16 lg:mt-20 p-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tests" element={<Tests />} />
+            <Route path="/test/:testId" element={<TestPage />} /> 
             <Route path="/emprendimientos" element={<Emprendimientos />} />
             <Route path="/testimonios" element={<Testimonios />} />
             <Route path="/contactanos" element={<Contactanos />} />
-            {/* Otras rutas */}
+            {/* Ruta para manejar páginas no encontradas */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 
