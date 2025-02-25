@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardContent } from '@components/ui/card';
 import { Button } from '@components/ui/button';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaUndo } from "react-icons/fa";
+import { FiGrid } from "react-icons/fi"; 
 import '@styles/TestPage.css';
 
 const tests = {
@@ -220,7 +221,7 @@ const TestPage = () => {
                 </div>
   
                 {/* 🔹 Botones de navegación */}
-                <div className="flex justify-center mt-6">
+                <div className="flex justify-between mt-6">
                     <Button 
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
                             currentQuestion === 0 
@@ -231,6 +232,12 @@ const TestPage = () => {
                         disabled={currentQuestion === 0}
                         >
                         <FaArrowLeft /> Atrás
+                    </Button>
+                    <Button 
+                        className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+                        onClick={() => navigate('/tests')}
+                    >
+                        <FiGrid /> Volver a Tests
                     </Button>
                 </div>
               </>
@@ -250,12 +257,17 @@ const TestPage = () => {
   
                 {/* 🔹 Botones mejorados */}
                 <div className="flex flex-col md:flex-row justify-center gap-4 mt-6">
-                  <Button className="restart-button bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg" onClick={() => window.location.reload()}>
-                    🔄 Repetir Test
-                  </Button>
-                  <Button className="back-button bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg" onClick={() => navigate('/tests')}>
-                    🔙 Volver a Tests
-                  </Button>
+                <Button className="restart-button bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg" onClick={() => window.location.reload()}>
+                  <div className="flex items-center gap-2">
+                    <FaUndo /> Repetir Test
+                  </div>
+                </Button>
+
+                <Button className="back-button bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg" onClick={() => navigate('/tests')}>
+                  <div className="flex items-center gap-2">
+                    <FiGrid /> Volver a Tests
+                  </div>
+                </Button>
                 </div>
               </div>
             )}
