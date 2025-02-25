@@ -17,4 +17,10 @@ body {
   }
   
   
-  
+  /* Estilos de react-slick */
+.slick-prev, .slick-next {
+  z-index: 10;
+}
+.slick-prev:before, .slick-next:before {
+  color: #007bff;
+}

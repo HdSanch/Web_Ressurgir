@@ -8,7 +8,7 @@ const navigation = [
   { name: 'Quienes somos', href: '#' },
   { name: 'Donaciones', href: '#' },
   { name: 'Emprendimientos', href: '/emprendimientos' },
-  { name: 'Voluntariado', href: '#' },
+  { name: 'Voluntariado', href: '/voluntariados' },
   { name: 'Tests', href: '/tests' },
   { name: 'Servicios', href: '/servicios' },
   { name: 'Contactanos', href: '/contactanos' },
