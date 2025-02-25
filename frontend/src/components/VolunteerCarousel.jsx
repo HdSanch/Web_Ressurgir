@@ -3,28 +3,43 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 
-// Datos de voluntariados con rutas de imágenes corregidas
-const volunteerItems = [
+// Beneficios y razones para ser voluntario
+const volunteerBenefits = [
   {
     id: 1,
-    title: "Capacitación para Voluntarios",
-    date: "2024-04-01",
-    image: '/images/Voluntariados/capacitacion.jpg', 
-    description: "Entrenamiento especializado para nuevos voluntarios en programas de prevención de adicciones."
+    title: "Desarrollo Personal y Profesional",
+    image: "/assets/images/varias/voluntariado1.png",
+    description: "Adquiere nuevas habilidades, mejora tu liderazgo y fortalece tu capacidad de trabajo en equipo."
   },
   {
     id: 2,
-    title: "Trabajo Comunitario",
-    date: "2024-03-25",
-    image: '/images/Voluntariados/comunidad.jpg',
-    description: "Jornada de voluntariado en barrios vulnerables, ofreciendo apoyo y actividades educativas."
+    title: "Impacto en la Comunidad",
+    image: "/assets/images/varias/voluntariado2.png",
+    description: "Ayuda a transformar vidas a través de programas de educación, salud y bienestar social."
   },
   {
     id: 3,
-    title: "Charlas de Concienciación",
-    date: "2024-03-15",
-    image: '/images/Voluntariados/charla.jpg',
-    description: "Nuestros voluntarios brindan charlas sobre prevención y tratamiento de adicciones."
+    title: "Oportunidad de Conectar con Personas",
+    image: "/assets/images/varias/voluntariado3.png",
+    description: "Conoce a personas con intereses similares y forma parte de una red solidaria y comprometida."
+  },
+  {
+    id: 4,
+    title: "Experiencia Gratificante",
+    image: "/assets/images/varias/voluntariado4.png",
+    description: "Siente la satisfacción de contribuir a una causa noble y ver el impacto de tu ayuda."
+  },
+  {
+    id: 5,
+    title: "Formación y Capacitación Continua",
+    image: "/assets/images/varias/voluntariado5.png",
+    description: "Recibe formación en prevención de adicciones y desarrollo social, impulsando tu crecimiento personal."
+  },
+  {
+    id: 6,
+    title: "Ambiente de Trabajo Solidario",
+    image: "/assets/images/varias/voluntariado6.png",
+    description: "Únete a un equipo de personas comprometidas con el bienestar social y el cambio positivo."
   }
 ];
 
@@ -32,11 +47,11 @@ const VolunteerCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % volunteerItems.length);
+    setCurrentIndex((prev) => (prev + 1) % volunteerBenefits.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + volunteerItems.length) % volunteerItems.length);
+    setCurrentIndex((prev) => (prev - 1 + volunteerBenefits.length) % volunteerBenefits.length);
   };
 
   return (
@@ -50,10 +65,10 @@ const VolunteerCarousel = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Oportunidades de Voluntariado
+            Beneficios de ser voluntario
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Únete a nuestra comunidad de voluntarios y ayúdanos a marcar la diferencia.
+            Únete a nuestra comunidad y descubre todo lo que el voluntariado puede ofrecerte.
           </p>
         </motion.div>
 
@@ -73,24 +88,17 @@ const VolunteerCarousel = () => {
                     <CardContent className="p-6 h-full flex flex-col md:flex-row gap-6">
                       <div className="md:w-1/2">
                         <img
-                          src={volunteerItems[currentIndex].image}
-                          alt={volunteerItems[currentIndex].title}
+                          src={volunteerBenefits[currentIndex].image}
+                          alt={volunteerBenefits[currentIndex].title}
                           className="w-full h-48 md:h-full object-cover rounded-lg"
                         />
                       </div>
                       <div className="md:w-1/2 flex flex-col justify-center">
-                        <p className="text-sm text-[#1e90ff] font-semibold mb-2">
-                          {new Date(volunteerItems[currentIndex].date).toLocaleDateString('es-ES', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                          })}
-                        </p>
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                          {volunteerItems[currentIndex].title}
+                          {volunteerBenefits[currentIndex].title}
                         </h3>
                         <p className="text-gray-600 leading-relaxed">
-                          {volunteerItems[currentIndex].description}
+                          {volunteerBenefits[currentIndex].description}
                         </p>
                       </div>
                     </CardContent>

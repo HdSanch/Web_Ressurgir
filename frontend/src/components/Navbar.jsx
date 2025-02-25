@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Tests', href: '/tests' },
   { name: 'Servicios', href: '/servicios' },
   { name: 'Contactanos', href: '/contactanos' },
+  { name: 'Testimonios', href: '/testimonios' },
 ]
 
 export default function Navbar() {

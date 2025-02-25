@@ -22,7 +22,7 @@ function App() {
         <Chatbot />
 
         {/* Contenedor de Routes que ocupa el espacio disponible */}
-        <div className="flex-grow mt-16 lg:mt-20 p-4">
+        <div className="flex-grow mt-16 lg:mt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tests" element={<Tests />} />
