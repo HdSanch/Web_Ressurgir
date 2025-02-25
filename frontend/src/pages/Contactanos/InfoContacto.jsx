@@ -1,17 +1,33 @@
-import React from 'react';
+import React from "react";
+import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const InfoContacto = () => {
   return (
-    <div className="mb-12 text-center">
-      <h2 className="contactanos-subheader">Información de Contacto</h2>
-      <p className="text-lg text-gray-600">Teléfono: 0939649440</p>
-      <p className="text-lg text-gray-600">Dirección: 1705011, Quito 170501</p>
-      <p className="text-lg text-gray-600">Correo Electrónico: contacto@fundacion.com</p>
-      <h3 className="text-xl font-semibold mt-8">Síguenos en nuestras redes sociales</h3>
-      <div className="flex justify-center space-x-4 mt-4">
-        <a href="https://www.facebook.com/tuFundacion" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook</a>
-        <a href="https://www.instagram.com/tuFundacion" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Instagram</a>
-        <a href="https://www.twitter.com/tuFundacion" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Twitter</a>
+    <div className="text-center mt-10">
+      <h2 className="text-2xl font-bold text-blue-900">Información de Contacto</h2>
+      <div className="mt-4 space-y-2 text-gray-700">
+        <p className="flex items-center justify-center gap-2 text-lg">
+          <FaPhone className="text-blue-600" /> 0963494220
+        </p>
+        <p className="flex items-center justify-center gap-2 text-lg">
+          <FaMapMarkerAlt className="text-red-500" /> Calle Río Putumayo y Pasaje E
+        </p>
+        <p className="flex items-center justify-center gap-2 text-lg">
+          <FaEnvelope className="text-yellow-500" /> fund.misionportuvidaressurgir@gmail.com
+        </p>
+      </div>
+
+      <h3 className="text-xl font-semibold text-gray-900 mt-8">Síguenos en nuestras redes sociales</h3>
+      <div className="flex justify-center space-x-6 mt-4">
+        <a href="https://www.facebook.com/tuFundacion" target="_blank" rel="noopener noreferrer">
+          <FaFacebook className="text-blue-600 text-2xl hover:text-blue-800 transition" />
+        </a>
+        <a href="https://www.instagram.com/tuFundacion" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="text-pink-600 text-2xl hover:text-pink-800 transition" />
+        </a>
+        <a href="https://www.twitter.com/tuFundacion" target="_blank" rel="noopener noreferrer">
+          <FaTwitter className="text-blue-400 text-2xl hover:text-blue-600 transition" />
+        </a>
       </div>
     </div>
   );

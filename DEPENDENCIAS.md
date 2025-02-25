@@ -16,6 +16,7 @@
 13. npm install @headlessui/react
 14. npm install @heroicons/react
 13. npm install @tailwindcss/aspect-ratio
+14. npm install emailjs-com
 
 
 
