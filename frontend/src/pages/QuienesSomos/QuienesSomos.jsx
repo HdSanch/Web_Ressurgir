@@ -1,15 +1,15 @@
 import React from "react";
-import Historia from "./Historia";
+import Introduccion from "./Introduccion";
 import MisionVision from "./MisionVision";
+import Valores from "./Valores";
 import Equipo from "./Equipo";
-import "../../styles/QuienesSomos.css"; // Puedes crear este archivo de estilos si lo deseas
 
 const QuienesSomos = () => {
   return (
-    <div className="quienes-somos-container">
-      <h1>Quiénes Somos</h1>
-      <Historia />
+    <div className="bg-gray-100">
+      <Introduccion />
       <MisionVision />
+      <Valores />
       <Equipo />
     </div>
   );
