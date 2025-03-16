@@ -12,7 +12,6 @@ const PatientEntrepreneurship = () => {
     { id: 'all', name: 'Todos', icon: Users },
     { id: 'art', name: 'Arte y Creatividad', icon: Heart },
     { id: 'crafts', name: 'Artesanías', icon: Award },
-    { id: 'services', name: 'Servicios', icon: MessageCircle }
   ];
 
   const emprendimientos = [

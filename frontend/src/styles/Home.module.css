@@ -1,7 +1,7 @@
 .heroBackground {
     height: 120%;
     background: linear-gradient(to top right, #f08080, #1e90ff);
-    opacity: 0.3;
+    opacity: 0.5;
   }
   
   .heroText {

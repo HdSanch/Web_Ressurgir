@@ -13,6 +13,7 @@ import TestPage from './pages/Test/TestPages.jsx';
 import Chatbot from './components/Chatbot';
 import NotFound from './NotFound.jsx';
 import Voluntariados from './pages/Voluntariados/Voluntariados.jsx';
+import Servicios from './pages/Servicios/Servicios.jsx';
 import './index.css';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/testimonios" element={<Testimonios />} />
             <Route path="/contactanos" element={<Contactanos />} />
             <Route path="/voluntariados" element={<Voluntariados />} />
+            <Route path="/servicios" element={<Servicios />} />
             {/* Ruta para manejar páginas no encontradas */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-[71vh] flex items-center justify-center">
         <div className="relative isolate px-6 lg:px-8 w-full max-w-5xl mx-auto">
           {/* Background effects */}
           <div
@@ -22,17 +22,25 @@ export default function Home() {
           />
           {/* Hero Content */}
           <motion.div
-            className="text-center py-32"
+            className="text-center py-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex flex-col items-center mb-6">
+              <img
+                src="../assets/images/images_empre/logo.png"
+                alt="Fundación Ressurgir Logo"
+                className="w-32 h-32 object-contain mb-4 mix-blend-multiply bg-transparent"
+                style={{ imageRendering: 'auto' }}
+              /> 
             <h1
-              className={`text-5xl font-bold tracking-tight text-white drop-shadow-md ${styles.heroText}`}
+              className={`text-5xl font-bold tracking-tight text- drop-shadow-md ${styles.heroText}`}
             >
               Fundación Ressurgir
             </h1>
-            <p className="mt-6 text-xl text-white font-medium drop-shadow-md">
+            </div>
+            <p className="mt-6 text-xl text-black font-medium drop-shadow-md">
               Somos una fundación dedicada a apoyar a personas en su proceso de resurgimiento personal y profesional, brindando oportunidades y acompañamiento integral para un futuro mejor.
             </p>
             {/* Call to Action Button */}

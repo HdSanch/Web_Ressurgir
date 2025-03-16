@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react';
 
 // Social media icons as separate components for better maintainability
@@ -67,13 +65,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#e7e7e7] text-[#444444] px-4 py-8 md:px-6 lg:px-8">
+    <footer className="bg-[#e7e7e7] text-[#444444] px-4 py-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main footer content */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-4">
           {/* Logo and social media section */}
           <div className="lg:w-[35%]">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
               <img
                 src={new URL('@icons/logo.jpg', import.meta.url).href} 
                 alt="Fundación Ressurgir Logo"
@@ -85,7 +83,7 @@ const Footer = () => {
             </div>
             
             {/* Social Media Links */}
-            <div className="flex gap-6 p-4">
+            <div className="flex gap-6 p-2">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -102,11 +100,11 @@ const Footer = () => {
           </div>
 
           {/* Contact and Newsletter section */}
-          <div className="lg:w-[65%] flex flex-col md:flex-row justify-end gap-8 lg:gap-16">
+          <div className="lg:w-[65%] flex flex-col md:flex-row justify-end gap-6 lg:gap-16">
             {/* Contact Information */}
             <div>
-              <h3 className="font-bold uppercase text-[#1B8FBD] pb-3">Contáctanos</h3>
-              <ul className="space-y-2">
+              <h3 className="font-bold uppercase text-[#1B8FBD] pb-2">Contáctanos</h3>
+              <ul className="space-y-1">
                 {contactInfo.map((info, index) => (
                   <li key={index}>
                     <a
@@ -122,15 +120,15 @@ const Footer = () => {
 
             {/* Newsletter Subscription */}
             <div className="md:max-w-sm">
-              <h3 className="font-bold uppercase text-[#1B8FBD] pb-3">Suscríbete</h3>
-              <p className="text-[#444444] mb-4">Suscríbete a nuestro boletín.</p>
+              <h3 className="font-bold uppercase text-[#1B8FBD] pb-2">Suscríbete</h3>
+              <p className="text-[#444444] mb-3">Suscríbete a nuestro boletín.</p>
               <NewsletterForm />
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-400 my-8" role="separator" />
+        <div className="border-t border-gray-400 my-4" role="separator" />
 
         {/* Copyright */}
         <p className="text-center text-sm">
