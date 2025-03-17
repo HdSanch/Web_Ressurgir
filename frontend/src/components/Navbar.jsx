@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+ 
 
 const navigation = [
   { name: 'Quienes somos', href: '/quienessomos' },
@@ -24,9 +25,9 @@ export default function Navbar() {
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
           <img
-            src={new URL('@icons/logo.jpg', import.meta.url).href}
+            src={new URL('@icons/logo1.png', import.meta.url).href}
             alt="Fundación Ressurgir"
-            className="h-10 w-auto"
+            className="h-10 w-auto object-contain mix-blend-multiply"
           />
           <span className="text-lg font-semibold text-gray-900 tracking-wide">FUNDACIÓN RESSURGIR</span>
         </a>
@@ -60,8 +61,8 @@ export default function Navbar() {
         <DialogPanel className="fixed inset-y-0 right-0 w-4/5 max-w-xs bg-white/80 backdrop-blur-md p-6 shadow-lg">
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center space-x-2">
-              <img src="/icons/logo.jpg" alt="Fundación Ressurgir" className="h-10 w-auto" />
-              <span className="text-lg font-semibold text-gray-900">Ressurgir</span>
+              <img src="/icons/logo1.png" alt="Fundación Ressurgir" className="h-10 w-auto object-contain mix-blend-multiply" />
+              <span className="text-lg font-semibold  text-gray-900">Ressurgir</span>
             </a>
             <button
               onClick={() => setMobileMenuOpen(false)}

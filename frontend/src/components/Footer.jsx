@@ -73,7 +73,7 @@ const Footer = () => {
           <div className="lg:w-[35%]">
             <div className="flex items-center gap-4 mb-4">
               <img
-                src={new URL('@icons/logo.jpg', import.meta.url).href} 
+                src={new URL('@icons/logo1.png', import.meta.url).href} 
                 alt="Fundación Ressurgir Logo"
                 width="66"
                 height="66"

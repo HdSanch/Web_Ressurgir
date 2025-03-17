@@ -57,7 +57,10 @@ const Chatbot = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      <button
+      
+      {/* este es el codigo para el boton azul original */}
+
+      {/* <button
         onClick={() => setIsOpen(!isOpen)}
         className={`${
           isOpen ? 'hidden' : 'flex'
@@ -65,14 +68,29 @@ const Chatbot = () => {
         aria-label="Ask a question"
       >
         <MessageCircle size={24} />
+      </button> */}
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`${
+          isOpen ? 'hidden' : 'flex'
+        } items-center justify-center w-16 h-16 rounded-full bg-transparent text-white  hover:bg-[#61b2e4] transition-colors overflow-hidden`}
+        aria-label="Ask a question"
+      >
+        <img 
+          src="../assets/icons/toallin.gif" 
+          alt="Chat assistant"
+          className="w-full h-full object-cover"
+        />
       </button>
+
 
       <div
         className={`${
           isOpen ? 'flex' : 'hidden'
         } flex-col w-80 h-96 bg-white rounded-lg shadow-xl`}
       >
-        <div className="flex items-center justify-between p-4 border-b bg-blue-600 text-white rounded-t-lg">
+        <div className="flex items-center justify-between p-4 border-b bg-[#61b2e4] text-white rounded-t-lg">
           <h3 className="text-lg font-semibold">Ask a Question</h3>
           <button
             onClick={() => setIsOpen(false)}
@@ -94,7 +112,7 @@ const Chatbot = () => {
                 className={`max-w-[80%] p-3 rounded-lg ${
                   message.isBot
                     ? 'bg-gray-100'
-                    : 'bg-blue-600 text-white'
+                    : 'bg-[#61b2e4] text-white'
                 }`}
               >
                 {message.text}
@@ -122,13 +140,13 @@ const Chatbot = () => {
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               placeholder="Type your question..."
-              className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:bg-[#61b2e4]"
               disabled={isLoading}
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+              className="p-2 bg-[#61b2e4] text-white rounded-lg hover:bg-[#61b2e4] transition-colors disabled:bg-blue-400"
             >
               <Send size={20} />
             </button>

@@ -7,7 +7,11 @@ import styles from '@styles/Home.module.css';
 
 export default function Home() {
   const scrollToContent = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    const heroSection = document.querySelector('section');
+    if (heroSection) {
+      const heroHeight = heroSection.offsetHeight;
+      window.scrollTo({ top: heroHeight, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -29,9 +33,9 @@ export default function Home() {
           >
             <div className="flex flex-col items-center mb-6">
               <img
-                src="../assets/images/images_empre/logo.png"
+                src="../assets/icons/logo1.png"
                 alt="Fundación Ressurgir Logo"
-                className="w-32 h-32 object-contain mb-4 mix-blend-multiply bg-transparent"
+                className="w-32 h-32 object-contain mb-4 "
                 style={{ imageRendering: 'auto' }}
               /> 
             <h1
@@ -46,7 +50,7 @@ export default function Home() {
             {/* Call to Action Button */}
             <motion.button
               onClick={scrollToContent}
-              className={`${styles.heroButton} mt-10`}
+              className={`${styles.heroButton} mt-11`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
