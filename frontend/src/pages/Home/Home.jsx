@@ -33,7 +33,7 @@ export default function Home() {
           >
             <div className="flex flex-col items-center mb-6">
               <img
-                src="../assets/icons/logo1.png"
+                src="../public/icons/logo1.png"
                 alt="Fundación Ressurgir Logo"
                 className="w-32 h-32 object-contain mb-4 "
                 style={{ imageRendering: 'auto' }}

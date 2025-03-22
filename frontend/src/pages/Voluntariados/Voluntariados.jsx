@@ -24,7 +24,7 @@ const Voluntariados = () => {
         {/* Imagen */}
         <div className="relative w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0">
           <img 
-            src="/assets/images/varias/voluntariado.png" 
+            src="/public/images/varias/voluntariado.png" 
             alt="Voluntariado" 
             className="max-w-sm md:max-w-lg drop-shadow-lg"
           />
