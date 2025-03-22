@@ -29,9 +29,7 @@
     "vite": "^5.4.11"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite"
   },
   "name": "frontend",
   "version": "1.0.0",
