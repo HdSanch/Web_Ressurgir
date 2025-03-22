@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()], // ✅ Ahora `react()` está definido
-  base: './', // Cambia a '/' si no se renderizan correctamente los assets
+  base: './', 
   server: {
     port: 3000,
   },

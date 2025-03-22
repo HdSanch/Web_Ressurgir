@@ -78,7 +78,7 @@ const Chatbot = () => {
         aria-label="Ask a question"
       >
         <img 
-          src="../public/icons/toallin.gif" 
+          src="/icons/toallin.gif" 
           alt="Chat assistant"
           className="w-full h-full object-cover"
         />

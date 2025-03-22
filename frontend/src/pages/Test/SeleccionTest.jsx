@@ -12,42 +12,42 @@ const testCategories = [
     title: "Test de Adicción al Alcohol",
     description:
       "¿Tu consumo de alcohol está afectando tu vida? Este test te ayudará a descubrir si hay señales de alerta y si sería recomendable buscar apoyo profesional.",
-    image: "/public/images/tests/alcohol.jpg",
+    image: new URL('@images/tests/alcohol.jpg', import.meta.url).href,
   },
   {
     id: "drogas",
     title: "Test de Adicción a las Drogas",
     description:
       "Evalúa si el uso de sustancias está impactando tu bienestar emocional, físico o social. Un primer paso para tomar el control.",
-    image: "/public/images/tests/drogas.jpg",
+    image: new URL('@images/tests/drogas.jpg', import.meta.url).href,
   },
   {
     id: "ansiedad",
     title: "Test de Ansiedad",
     description:
       "Si experimentas preocupación constante, tensión o insomnio, este test te ayudará a comprender mejor tu nivel de ansiedad.",
-    image: "/public/images/tests/ansiedad.webp",
+    image: new URL('@images/tests/ansiedad.webp', import.meta.url).href,
   },
   {
     id: "depresion",
     title: "Test de Depresión",
     description:
       "Detecta signos de depresión como tristeza persistente, fatiga o pérdida de interés en actividades diarias.",
-    image: "/public/images/tests/depresion.jpg",
+    image: new URL('@images/tests/depresion.jpg', import.meta.url).href,
   },
   {
     id: "tecnologia",
     title: "Test de Dependencia Tecnológica",
     description:
       "Evalúa si el uso de redes sociales, videojuegos o internet está afectando tu vida personal, social o laboral.",
-    image: "/public/images/tests/tecnologia.jpg",
+    image: new URL('@images/tests/tecnologia.jpg', import.meta.url).href,
   },
   {
     id: "estres",
     title: "Test de Estrés",
     description:
       "Descubre si el estrés está afectando tu salud mental y física, y aprende cómo manejarlo de manera saludable.",
-    image: "/public/images/tests/estres.jpg",
+    image: new URL('@images/tests/estres.jpg', import.meta.url).href,
   },
 ];
 
@@ -68,7 +68,7 @@ const TestSelection = () => {
       <div className="intro-section" data-aos="fade-up">
         <h1 className="main-title">Prueba Nuestros Diferentes Tests</h1>
         <img 
-          src="/public/images/tests/test-taking-tips.jpg"
+          src="/images/tests/test-taking-tips.jpg"
           alt="Evaluaciones de salud mental y bienestar emocional" 
           className="intro-image"
         />

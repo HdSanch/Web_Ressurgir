@@ -7,7 +7,7 @@ const NotFound = () => {
       
       {/* 🔹 Imagen de error */}
       <img 
-        src="/assets/images/varias/404.png" 
+        src="/images/varias/404.png" 
         alt="Página no encontrada"
         className="w-80 md:w-96 mb-6 drop-shadow-lg"
       />

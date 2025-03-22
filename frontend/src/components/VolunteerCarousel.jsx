@@ -8,37 +8,37 @@ const volunteerBenefits = [
   {
     id: 1,
     title: "Desarrollo Personal y Profesional",
-    image: "/assets/images/varias/voluntariado1.png",
+    image: "/images/varias/voluntariado1.png",
     description: "Adquiere nuevas habilidades, mejora tu liderazgo y fortalece tu capacidad de trabajo en equipo."
   },
   {
     id: 2,
     title: "Impacto en la Comunidad",
-    image: "/assets/images/varias/voluntariado2.png",
+    image: "/images/varias/voluntariado2.png",
     description: "Ayuda a transformar vidas a través de programas de educación, salud y bienestar social."
   },
   {
     id: 3,
     title: "Oportunidad de Conectar con Personas",
-    image: "/assets/images/varias/voluntariado3.png",
+    image: "/images/varias/voluntariado3.png",
     description: "Conoce a personas con intereses similares y forma parte de una red solidaria y comprometida."
   },
   {
     id: 4,
     title: "Experiencia Gratificante",
-    image: "/assets/images/varias/voluntariado4.png",
+    image: "/images/varias/voluntariado4.png",
     description: "Siente la satisfacción de contribuir a una causa noble y ver el impacto de tu ayuda."
   },
   {
     id: 5,
     title: "Formación y Capacitación Continua",
-    image: "/assets/images/varias/voluntariado5.png",
+    image: "/images/varias/voluntariado5.png",
     description: "Recibe formación en prevención de adicciones y desarrollo social, impulsando tu crecimiento personal."
   },
   {
     id: 6,
     title: "Ambiente de Trabajo Solidario",
-    image: "/assets/images/varias/voluntariado6.png",
+    image: "/images/varias/voluntariado6.png",
     description: "Únete a un equipo de personas comprometidas con el bienestar social y el cambio positivo."
   }
 ];
