@@ -81,7 +81,7 @@
 
 /* === Botón de envío === */
 .boton-enviar {
-  background-color: #1d4ed8;
+  background-color: #db2777;
   color: white;
   font-weight: 600;
   padding: 0.75rem;
@@ -92,7 +92,7 @@
 }
 
 .boton-enviar:hover {
-  background-color: #1e40af;
+  background-color: #ff0066;
 }
 
 /* === Mensajes de validación === */

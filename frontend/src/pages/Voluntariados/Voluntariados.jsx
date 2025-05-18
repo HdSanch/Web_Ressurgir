@@ -1,52 +1,233 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import VolunteerCarousel from '@components/VolunteerCarousel';
 import { useNavigate } from 'react-router-dom';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import "@styles/voluntariado.css";
 
 const Voluntariados = () => {
-
   const navigate = useNavigate();
+  const [monto, setMonto] = useState(25);
+    useEffect(() => {
+    AOS.init({ 
+      duration: 900, 
+      once: true,
+      easing: 'ease-in-out',
+      offset: 100
+    });
+  }, []);
 
   return (
     <div>
-      <div 
-        className="relative bg-gradient-to-r from-white via-blue-300 to-blue-600 py-20 px-12 flex flex-col md:flex-row items-center justify-center"
-      >
-        {/* Sección de Texto */}
-        <div className="relative z-10 text-left text-blue-900 max-w-lg md:w-1/2">
-          <h1 className="text-6xl font-extrabold text-pink-600 leading-tight">
-            ¡Hazte Voluntario!
+      {/* SECCIÓN VOLUNTARIADOS */}
+      <div className="voluntariados-header">
+        <div 
+          className="voluntariados-texto"
+          data-aos="fade-right"
+          data-aos-duration="1200"
+        >
+          <h1 data-aos="fade-up" data-aos-delay="200">
+            ¡Haz la Diferencia con Nosotros!
           </h1>
-          <p className="text-2xl mt-4 text-[#1E3A8A] font-medium">
-            Únete a nuestra misión y ayuda a transformar vidas.
+          <p data-aos="fade-up" data-aos-delay="400">
+            Únete a nuestra misión para transformar vidas. Con tu compromiso, ayudas a quienes más lo necesitan mientras desarrollas habilidades y creces como persona. Si no puedes dedicar tiempo, apoya con donaciones económicas que financian programas esenciales de educación, salud y alimentación. Juntos, voluntarios y donantes construimos un futuro mejor.
           </p>
         </div>
-
-        {/* Imagen */}
-        <div className="relative w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0">
-          <img 
-            src="/images/varias/voluntariado.png" 
-            alt="Voluntariado" 
-            className="max-w-sm md:max-w-lg drop-shadow-lg"
-          />
+        <div 
+          className="voluntariados-imagen"
+          data-aos="fade-left"
+          data-aos-duration="1200"
+          data-aos-delay="300"
+        >
+          <img src="/images/varias/voluntariado.png" alt="Voluntariado" />
         </div>
       </div>
 
-      <VolunteerCarousel />
+      <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <VolunteerCarousel />
+      </div>
 
-      <div className="text-center mt-10 mb-16">
-        <h2 className="text-2xl font-bold text-gray-900">¿Cómo ser voluntario?</h2>
-        <p className="text-lg text-gray-700 mt-4">
-          Si estás interesado en ser parte de esta noble causa y unirte a nuestra comunidad de voluntarios, 
+      <div 
+        className="voluntariados-info"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+      >
+        <h2 data-aos="slide-down" data-aos-delay="200">
+          ¿Cómo ser voluntario?
+        </h2>
+        <p data-aos="fade-in" data-aos-delay="400">
+          Si estás interesado en ser parte de esta noble causa y unirte a nuestra comunidad de voluntarios,
           contáctanos para más información.
         </p>
-        
-        <button
+        <button 
           onClick={() => navigate('/contactanos')}
-          className="mt-6 bg-[#1e90ff] hover:bg-[#1c7ed6] text-white font-semibold text-lg px-6 py-3 rounded-lg shadow-md transition duration-300"
+          data-aos="bounce-in"
+          data-aos-delay="600"
         >
           Contactarnos
         </button>
       </div>
+
+      {/* SECCIÓN DONACIONES */}
+      <div className="donaciones-container">
+        <header 
+          className="donaciones-header"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
+          <h1 data-aos="zoom-in" data-aos-delay="200">
+            Haz la Diferencia
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="400">
+            Con tu donación, podemos impactar más vidas y construir un futuro mejor. Cada contribución cuenta.
+          </p>
+        </header>
+
+        <div className="contenedor-donacion-impacto">
+          {/* Formulario Donación */}
+          <PayPalScriptProvider options={{ "client-id": "AVqTOrintl2LJeNnq8P9vszJXgaDIM1G0dHCfDbmTMNxvUg4HLU-WdThXBtj6W4AbDuWxF_jCOkdismq" }}>
+            <section 
+              id="donar" 
+              className="formulario-donacion"
+              data-aos="slide-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <h2 data-aos="fade-in" data-aos-delay="300">
+                Elige tu Monto
+              </h2>
+
+              <div 
+                className="montos-botones"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                {[10, 25, 50, 100].map((cantidad, index) => (
+                  <button
+                    key={cantidad}
+                    className={`monto-boton ${monto === cantidad ? "activo" : ""}`}
+                    onClick={() => setMonto(cantidad)}
+                    data-aos="flip-left"
+                    data-aos-delay={600 + (index * 100)}
+                  >
+                    ${cantidad}
+                  </button>
+                ))}
+              </div>
+
+              <div 
+                className="otra-cantidad"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+              >
+                <input
+                  type="number"
+                  placeholder="Otra cantidad"
+                  value={monto}
+                  onChange={(e) => setMonto(e.target.value)}
+                />
+              </div>
+
+              <div 
+                className="paypal-boton"
+                data-aos="zoom-in"
+                data-aos-delay="1200"
+              >
+                <PayPalButtons
+                  style={{ layout: "vertical" }}
+                  createOrder={(data, actions) => {
+                    return actions.order.create({
+                      purchase_units: [
+                        {
+                          amount: {
+                            value: monto.toString(),
+                          },
+                        },
+                      ],
+                    });
+                  }}
+                  onApprove={(data, actions) => {
+                    return actions.order.capture().then((details) => {
+                      alert(`Gracias, ${details.payer.name.given_name}, por donar $${monto}!`);
+                    });
+                  }}
+                />
+              </div>
+
+              <p 
+                className="nota-seguridad"
+                data-aos="fade-in"
+                data-aos-delay="1400"
+              >
+                Pagos seguros con PayPal
+              </p>
+            </section>
+          </PayPalScriptProvider>
+
+          {/* Impacto Donaciones adaptado */}
+          <section 
+            className="impacto-donaciones"
+            data-aos="slide-left"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
+            <h2 data-aos="fade-down" data-aos-delay="400">
+              Tu Donación en Acción
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="500">
+              Somos una institución comprometida con brindar servicios integrales de salud: psicología, psiquiatría, medicina general, nutrición, enfermería y atención pre hospitalaria, tanto dentro como fuera de nuestra fundación.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="600">
+              Apoyamos a niños, jóvenes, adultos y adultos mayores en situación de vulnerabilidad, luchando contra la violencia de género y promoviendo la equidad.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="700">
+              Nuestra misión es ofrecer acompañamiento personalizado, recursos y programas que fortalezcan el bienestar físico, emocional y social de las personas, promoviendo su autonomía y dignidad.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="800">
+              Desde 2021, nuestra fundación ha crecido gracias al compromiso de fundadores y voluntarios que brindan charlas, terapias y campañas médicas a nivel nacional. Nacimos para cambiar la realidad de quienes enfrentan adicciones y exclusión social, con amor y disciplina.
+            </p>
+          </section>
+        </div>
+
+        {/* Información de Donaciones */}
+        <section 
+          className="info-donaciones mt-8 p-6 bg-gray-100 rounded-lg"
+          data-aos="flip-up"
+          data-aos-duration="1200"
+          data-aos-delay="200"
+        >
+          <h2 data-aos="slide-down" data-aos-delay="300">
+            Donaciones Directas
+          </h2>
+          <p data-aos="fade-in" data-aos-delay="400">
+            También puedes apoyar con transferencias a nuestra cuenta bancaria:
+          </p>
+          <ul 
+            className="list-disc list-inside mt-2"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <li data-aos="slide-right" data-aos-delay="600">
+              <strong>Cuenta de Cooperativa Luz del Valle</strong>
+            </li>
+            <li data-aos="slide-right" data-aos-delay="700">
+              Cuenta de ahorros: <code>406100031799</code>
+            </li>
+            <li data-aos="slide-right" data-aos-delay="800">
+              RUC: <code>1793210266001</code>
+            </li>
+            <li data-aos="slide-right" data-aos-delay="900">
+              Nombre: <code>Fundación misión por tu vida ressurgir</code>
+            </li>
+            <li data-aos="slide-right" data-aos-delay="1000">
+              Correo: <a href="mailto:fund.misionportuvidaressurgir@gmail.com">fund.misionportuvidaressurgir@gmail.com</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
     </div>
   );
 };

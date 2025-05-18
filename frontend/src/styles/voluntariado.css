@@ -1,0 +1,398 @@
+/* Variables CSS simplificadas */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #db2777;
+  --text-dark: #111827;
+  --text-gray: #6b7280;
+  --bg-light: #f8fafc;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+}
+
+/* === SECCIÓN VOLUNTARIADOS === */
+
+/* Header principal */
+.voluntariados-header {
+  background: linear-gradient(to right, white 0%, #dbeafe 40%, var(--primary-color) 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 1rem;
+  gap: 3rem;
+}
+
+.voluntariados-header .voluntariados-texto {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  margin-left: 50px;
+}
+
+.voluntariados-texto h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--secondary-color);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.voluntariados-texto p {
+  font-size: 1.125rem;
+  color: #2c2e49;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.voluntariados-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.voluntariados-imagen img {
+  max-width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.voluntariados-imagen img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Info voluntarios */
+.voluntariados-info {
+  background: var(--bg-light);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.voluntariados-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.voluntariados-info p {
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.voluntariados-info button {
+  background: #db2777;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.voluntariados-info button:hover {
+  background: #ff0073;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* === SECCIÓN DONACIONES === */
+
+.donaciones-container {
+  padding: 4rem 1rem;
+  background: white;
+}
+
+/* Header donaciones */
+.donaciones-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.donaciones-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.donaciones-header p {
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contenedor principal lado a lado */
+.contenedor-donacion-impacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Formulario de donación */
+.formulario-donacion {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.formulario-donacion h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+/* Botones de monto */
+.montos-botones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.monto-boton {
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.monto-boton:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.monto-boton.activo {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Input otra cantidad */
+.otra-cantidad input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  transition: var(--transition);
+}
+
+.otra-cantidad input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* PayPal */
+.paypal-boton {
+  margin: 1.5rem 0;
+}
+
+.nota-seguridad {
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+/* Sección impacto */
+.impacto-donaciones {
+  padding: 2rem;
+}
+
+.impacto-donaciones h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.impacto-donaciones p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Información adicional de donaciones */
+.info-donaciones {
+  background: linear-gradient(to right, #ffffff, #ffd5e8);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  margin: 3rem auto 0;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid #e5e7eb;
+}
+
+.info-donaciones h2 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.info-donaciones h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.info-donaciones > p {
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-donaciones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+}
+
+.info-donaciones li {
+  margin-bottom: 1rem;
+  color: var(--text-gray);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-donaciones li:last-child {
+  margin-bottom: 0;
+}
+
+.info-donaciones li strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.info-donaciones code {
+  background: #9c9fa338;
+  color: rgb(0, 0, 0);
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.info-donaciones a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.info-donaciones a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Icono para cada item */
+.info-donaciones li::before {
+  content: '💳';
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-donaciones li:nth-child(2)::before { content: '🏦'; }
+.info-donaciones li:nth-child(3)::before { content: '📋'; }
+.info-donaciones li:nth-child(4)::before { content: '🏢'; }
+.info-donaciones li:nth-child(5)::before { content: '📧'; }
+
+/* === RESPONSIVE === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .contenedor-donacion-impacto {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .montos-botones {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .voluntariados-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .donaciones-container,
+  .voluntariados-info {
+    padding: 3rem 1rem;
+  }
+  
+  .formulario-donacion,
+  .impacto-donaciones {
+    padding: 1.5rem;
+  }
+  
+  .montos-botones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .donaciones-header h1 {
+    font-size: 2rem;
+  }
+  
+  .voluntariados-info h2,
+  .impacto-donaciones h2 {
+    font-size: 1.5rem;
+  }
+}

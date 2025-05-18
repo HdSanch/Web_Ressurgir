@@ -1,133 +1,155 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 
-// Beneficios y razones para ser voluntario
 const volunteerBenefits = [
   {
     id: 1,
     title: "Desarrollo Personal y Profesional",
     image: "/images/varias/voluntariado1.png",
-    description: "Adquiere nuevas habilidades, mejora tu liderazgo y fortalece tu capacidad de trabajo en equipo."
+    description: "Adquiere nuevas habilidades, mejora tu liderazgo y fortalece tu capacidad de trabajo en equipo. Participar como voluntario también te brinda una visión más amplia del entorno social y te permite aplicar tus conocimientos en contextos reales."
   },
   {
     id: 2,
     title: "Impacto en la Comunidad",
     image: "/images/varias/voluntariado2.png",
-    description: "Ayuda a transformar vidas a través de programas de educación, salud y bienestar social."
+    description: "Ayuda a transformar vidas a través de programas de educación, salud y bienestar social. Para que estas acciones sean posibles, necesitamos diversos insumos que nos permitan brindar hospedaje y alimentación durante estes procesos. Si deseas contribuir con alimentos o algún otro donativo en especie, escríbenos."
   },
   {
     id: 3,
     title: "Oportunidad de Conectar con Personas",
     image: "/images/varias/voluntariado3.png",
-    description: "Conoce a personas con intereses similares y forma parte de una red solidaria y comprometida."
+    description: "Conoce a personas con intereses similares y forma parte de una red solidaria y comprometida. Comparte experiencias, construye amistades significativas y colabora en un ambiente enriquecedor y humano."
   },
   {
     id: 4,
     title: "Experiencia Gratificante",
     image: "/images/varias/voluntariado4.png",
-    description: "Siente la satisfacción de contribuir a una causa noble y ver el impacto de tu ayuda."
+    description: "Siente la satisfacción de contribuir a una causa noble y ver el impacto de tu ayuda. Cada pequeña contribución, incluso los donativos monetarios, hace una gran diferencia para continuar transformando vidas y sostener las acciones sociales que impulsamos. Si deseas realizar un donativo, contáctanos."
   },
   {
     id: 5,
     title: "Formación y Capacitación Continua",
-    image: "/images/varias/voluntariado5.png",
-    description: "Recibe formación en prevención de adicciones y desarrollo social, impulsando tu crecimiento personal."
+    image: "/images/varias/voluntariado7.png",
+    description: "Recibe formación en prevención de adicciones y desarrollo social, impulsando tu crecimiento personal. Obtén herramientas útiles para tu vida cotidiana y tu desarrollo profesional mientras fortaleces tu compromiso social."
   },
   {
     id: 6,
     title: "Ambiente de Trabajo Solidario",
-    image: "/images/varias/voluntariado6.png",
-    description: "Únete a un equipo de personas comprometidas con el bienestar social y el cambio positivo."
+    image: "/images/varias/voluntariado8.png",
+    description: "Únete a un equipo de personas comprometidas con el bienestar social y el cambio positivo. Comparte tus talentos en un entorno colaborativo donde el respeto, la empatía y el apoyo mutuo son fundamentales."
   }
 ];
 
-const VolunteerCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset, velocity) => Math.abs(offset) * velocity;
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % volunteerBenefits.length);
+const VolunteerCarousel = () => {
+  const [[currentIndex, direction], setCurrentIndex] = useState([0, 0]);
+
+  const paginate = (newDirection) => {
+    setCurrentIndex(([prevIndex]) => {
+      const newIndex = (prevIndex + newDirection + volunteerBenefits.length) % volunteerBenefits.length;
+      return [newIndex, newDirection];
+    });
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + volunteerBenefits.length) % volunteerBenefits.length);
+  // Cambio automático cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      paginate(1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+    }),
   };
 
   return (
     <section className="py-12 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div 
-          className="mx-auto max-w-2xl text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="mx-auto max-w-2xl text-center mb-10">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Beneficios de ser voluntario
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Únete a nuestra comunidad y descubre todo lo que el voluntariado puede ofrecerte.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="relative h-[400px] w-full">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute w-full h-full"
-                >
-                  <Card className="h-full">
-                    <CardContent className="p-6 h-full flex flex-col md:flex-row gap-6">
-                      <div className="md:w-1/2">
-                        <img
-                          src={volunteerBenefits[currentIndex].image}
-                          alt={volunteerBenefits[currentIndex].title}
-                          className="w-full h-48 md:h-full object-cover rounded-lg"
-                        />
-                      </div>
-                      <div className="md:w-1/2 flex flex-col justify-center">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                          {volunteerBenefits[currentIndex].title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
+        <div className="relative overflow-hidden">
+          <div className="relative h-[400px] w-full select-none">
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.5 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x);
+                  if (swipe < -swipeConfidenceThreshold) {
+                    paginate(1);
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    paginate(-1);
+                  }
+                }}
+                className="absolute w-full h-full"
+              >
+                <Card className="h-full min-h-[415px]">
+                  <CardContent className="p-4 sm:p-6 h-full flex flex-col md:flex-row gap-4 sm:gap-6">
+                    <div className="w-full md:w-1/2">
+                      <img
+                        src={volunteerBenefits[currentIndex].image}
+                        alt={volunteerBenefits[currentIndex].title}
+                        className="w-full h-48 sm:h-full object-cover rounded-lg"
+                      />
+                    </div>
+                    <div className="w-full md:w-1/2 flex flex-col justify-start">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4 break-words">
+                        {volunteerBenefits[currentIndex].title}
+                      </h3>
+                      <div className="overflow-y-auto max-h-[200px] sm:max-h-none pr-2">
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed break-words">
                           {volunteerBenefits[currentIndex].description}
                         </p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          {/* Botones de navegación */}
-          <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={prevSlide}
-              className="bg-white/80 backdrop-blur-sm rounded-full p-2 text-gray-800 hover:bg-white hover:text-[#1e90ff] shadow-lg transition-all duration-300"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft size={24} />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={nextSlide}
-              className="bg-white/80 backdrop-blur-sm rounded-full p-2 text-gray-800 hover:bg-white hover:text-[#1e90ff] shadow-lg transition-all duration-300"
-              aria-label="Next slide"
-            >
-              <ChevronRight size={24} />
-            </motion.button>
+          {/* Indicadores / botones */}
+          <div className="flex justify-center mt-6 space-x-3">
+            {volunteerBenefits.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex([idx, idx > currentIndex ? 1 : -1])}
+                className={`w-4 h-4 rounded-full transition-colors duration-300 ${
+                  idx === currentIndex ? "bg-[#1e90ff]" : "bg-gray-300"
+                }`}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
