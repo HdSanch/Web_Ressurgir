@@ -1,43 +1,202 @@
-.contactanos-container {
-    background-image: url('@images/images_empre/fondo.png');
-    background-size: 5%;
-  }
+/* === Contactanos: Contenedor principal === */
+.contactanos-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* centra verticalmente */
+  gap: 3rem;
+  padding: 3rem 1.5rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  box-sizing: border-box;
   
-  .contactanos-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 32px;
-    width: 90%;
-    max-width: 800px;
+  background: linear-gradient(to right, #ffffff, #319cce98);
+}
+
+
+/* === Mapa + InfoContacto === */
+.contactanos-mapa {
+  flex: 1 1 45%;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+/* === Formulario === */
+.contactanos-formulario {
+  flex: 1 1 45%;
+  min-width: 320px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* === Título del formulario === */
+.titulo-formulario {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+}
+
+/* === Formulario: Estilos comunes === */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* === Botón de envío === */
+.boton-enviar {
+  background-color: #1d4ed8;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.boton-enviar:hover {
+  background-color: #1e40af;
+}
+
+/* === Mensajes de validación === */
+.mensaje-exito {
+  color: #16a34a;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.mensaje-error {
+  color: #dc2626;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* === InfoContacto === */
+.info-contacto {
+  background-color: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.titulo-contacto {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.datos-contacto {
+  font-size: 1.1rem;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dato-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* === Redes Sociales === */
+.subtitulo-redes {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 1rem;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.red-social-icono {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.red-facebook {
+  color: #2563eb;
+}
+
+.red-facebook:hover {
+  color: #1e3a8a;
+}
+
+.red-instagram {
+  color: #db2777;
+}
+
+.red-instagram:hover {
+  color: #9d174d;
+}
+
+.red-twitter {
+  color: #60a5fa;
+}
+
+.red-twitter:hover {
+  color: #3b82f6;
+}
+
+/* === Responsividad === */
+@media (max-width: 768px) {
+  .contactanos-grid {
+    flex-direction: column;
+    padding: 2rem 1rem;
   }
-  
-  .contactanos-header {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #4A4A4A;
-  }
-  
-  .contactanos-subheader {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #4A4A4A;
-  }
-  
-  .contactanos-button {
-    background-color: #3182CE;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
+
+  .contactanos-formulario,
+  .contactanos-mapa {
     width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
   }
-  
-  .contactanos-button:hover {
-    background-color: #2B6CB0;
-  }
-  
+}

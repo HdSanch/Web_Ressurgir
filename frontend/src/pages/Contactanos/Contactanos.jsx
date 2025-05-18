@@ -18,31 +18,24 @@ const Contactanos = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white via-blue-100 to-blue-300 p-6">
-      <div className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-8">
-        <h1 className="text-4xl font-extrabold text-center text-blue-900">Contáctanos</h1>
-        <p className="text-lg text-center text-gray-700 mt-2">
-          Estamos aquí para responder tus preguntas y ayudarte en lo que necesites.
-        </p>
+    <div className="contactanos-grid">
+  <div className="contactanos-mapa">
+    <Mapa />
+    <InfoContacto />
+  </div>
+  <div className="contactanos-formulario">
+    <FormularioContacto
+      nombre={nombre}
+      setNombre={setNombre}
+      correo={correo}
+      setCorreo={setCorreo}
+      mensaje={mensaje}
+      setMensaje={setMensaje}
+      handleSubmit={handleSubmit}
+    />
+  </div>
+</div>
 
-        {/* Sección del Mapa */}
-        <Mapa />
-
-        {/* Información de Contacto */}
-        <InfoContacto />
-
-        {/* Formulario de Contacto */}
-        <FormularioContacto
-          nombre={nombre}
-          setNombre={setNombre}
-          correo={correo}
-          setCorreo={setCorreo}
-          mensaje={mensaje}
-          setMensaje={setMensaje}
-          handleSubmit={handleSubmit}
-        />
-      </div>
-    </div>
   );
 };
 
