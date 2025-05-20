@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import QuienesSomos from "./pages/QuienesSomos/QuienesSomos";
 import Donaciones from "./pages/Donaciones/Donaciones";
@@ -16,34 +16,41 @@ import Voluntariados from './pages/Voluntariados/Voluntariados.jsx';
 import Servicios from './pages/Servicios/Servicios.jsx';
 import './index.css';
 
+function AppLayout() {
+  const location = useLocation();
+  const [showLayout, setShowLayout] = useState(location.pathname !== '/');
+
+  const showNavFooter = location.pathname !== '/' || showLayout;
+  const [showChatbot, setShowChatbot] = useState(location.pathname !== '/');
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {showNavFooter && <Navbar />}
+      {showChatbot && <Chatbot />}
+      <div className="flex-grow">
+      <Routes>
+          <Route path="/" element={<Home setShowLayout={setShowLayout} setShowChatbot={setShowChatbot} />} />
+          <Route path="/quienessomos" element={<QuienesSomos />} />
+          <Route path="/donaciones" element={<Donaciones />} />
+          <Route path="/tests" element={<Tests />} />
+          <Route path="/test/:testId" element={<TestPage />} /> 
+          <Route path="/emprendimientos" element={<Emprendimientos />} />
+          <Route path="/testimonios" element={<Testimonios />} />
+          <Route path="/contactanos" element={<Contactanos />} />
+          <Route path="/voluntariados" element={<Voluntariados />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+      {showNavFooter && <Footer />}
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
-      {/* Usamos flexbox en el contenedor principal */}
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <Chatbot />
-
-        {/* Contenedor de Routes que ocupa el espacio disponible */}
-        <div className="flex-grow mt-16 lg:mt-20">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/quienessomos" element={<QuienesSomos />} />
-            <Route path="/donaciones" element={<Donaciones />} />
-            <Route path="/tests" element={<Tests />} />
-            <Route path="/test/:testId" element={<TestPage />} /> 
-            <Route path="/emprendimientos" element={<Emprendimientos />} />
-            <Route path="/testimonios" element={<Testimonios />} />
-            <Route path="/contactanos" element={<Contactanos />} />
-            <Route path="/voluntariados" element={<Voluntariados />} />
-            <Route path="/servicios" element={<Servicios />} />
-            {/* Ruta para manejar páginas no encontradas */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-
-        <Footer />
-      </div>
+      <AppLayout />
     </Router>
   );
 }

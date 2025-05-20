@@ -6,7 +6,9 @@
   
   .heroText {
     font-family: 'Dancing Script', sans-serif;
+    letter-spacing: -0.5px;
   }
+
   
   .heroButton {
     background-color: white;
