@@ -31,7 +31,7 @@ function AppLayout() {
       <Routes>
           <Route path="/" element={<EnhancedFoundationHome setShowLayout={setShowLayout} setShowChatbot={setShowChatbot} />} />
           <Route path="/quienessomos" element={<QuienesSomos />} />
-          <Route path="/donaciones" element={<Donaciones />} />
+          <Route path="/voluntariados" element={<Voluntariados />} />
           <Route path="/tests" element={<Tests />} />
           <Route path="/test/:testId" element={<TestPage />} /> 
           <Route path="/emprendimientos" element={<PatientEntrepreneurship />} />
