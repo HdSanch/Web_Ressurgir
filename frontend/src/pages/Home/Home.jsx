@@ -265,7 +265,7 @@ export default function EnhancedFoundationHome() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
           >
-            <CTAButton href="/donaciones" label="Haz una donación" />
+            <CTAButton href="/voluntariados" label="Haz una donación" />
           </motion.div>
         </div>
 
@@ -631,7 +631,7 @@ export default function EnhancedFoundationHome() {
                 ))}
               </div>
 
-              <CTAButton href="/donaciones" label="Quiero ser voluntario" icon={Hands} />
+              <CTAButton href="/voluntariados" label="Quiero ser voluntario" icon={Hands} />
             </motion.div>
 
             {/* Donaciones */}
@@ -668,7 +668,7 @@ export default function EnhancedFoundationHome() {
                 ))}
               </div>
 
-              <CTAButton href="/donaciones" label="Hacer una donación" icon={Gift} />
+              <CTAButton href="/voluntariados" label="Hacer una donación" icon={Gift} />
             </motion.div>
           </div>
 

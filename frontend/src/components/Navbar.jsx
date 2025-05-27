@@ -22,7 +22,7 @@ const ArrowRightIcon = () => (
 
 const navigation = [
   { name: 'Quienes somos', href: '/quienessomos' },
-  { name: 'Donaciones y Voluntariado', href: './donaciones' },
+  { name: 'Donaciones y Voluntariado', href: './voluntariados' },
   { name: 'Emprendimientos', href: '/emprendimientos' },
   { name: 'Tests', href: '/tests' },
   { name: 'Servicios', href: '/servicios' },

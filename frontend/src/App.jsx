@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import EnhancedFoundationHome from './pages/Home/Home.jsx';
 import QuienesSomos from "./pages/QuienesSomos/QuienesSomos";
-import Donaciones from "./pages/Donaciones/Donaciones";
 import PatientEntrepreneurship from './pages/Emprendimientos/Emprendimientos.jsx';
 import Testimonios from './pages/Testimonios/Testimonios.jsx';
 import Contactanos from './pages/Contactanos/Contactanos.jsx';
